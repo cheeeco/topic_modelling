@@ -186,8 +186,8 @@ def run(collection_path: str):
         file_text = preprocess_text(file_text)
         documents[i] = file_text
 
-    bow_model = BagOfWordsModel(id_document_dict=documents, model=TfidfVectorizer)
-    bow_model.to_uci(model_name="tfidf", save_folder=collection_path)
+    bow_model = BagOfWordsModel(id_document_dict=documents, model=CountVectorizer)
+    bow_model.to_uci(model_name="bow", save_folder=collection_path)
 
 
 if __name__ == "__main__":
